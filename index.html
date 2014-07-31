@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Anrin by ytisf</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Anrin</h1>
+        <p>A Log Censore Tool</p>
+        <p class="view"><a href="https://github.com/ytisf/Anrin">View the Project on GitHub <small>ytisf/Anrin</small></a></p>
+        <ul>
+          <li><a href="https://github.com/ytisf/Anrin/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/ytisf/Anrin/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/ytisf/Anrin">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="anrin" class="anchor" href="#anrin"><span class="octicon octicon-link"></span></a>Anrin</h1>
+
+<p>Anrin is a tool intended for IT personnel who need to export log files to external companies and other third partied. Some logs (firewalls, routers and so on) contain information such as IP addresses, MAC addresses and domain names. Usually we keep this sort of information well guarded but when exporting those logs we allow other entities to view it (along with routing information and other types of sensitive data).</p>
+
+<p>Anrin will be watching a folder to see new files. When a new file is added it will search for IP addresses, MAC addresses and domain named within this file. Then it will generate 'random' data to replace it. The thing about Anrin is that it will keep the basic logic behind it. </p>
+
+<p>For example;</p>
+
+<pre><code>IP: 192.168.3.1 is trying to contact 192.168.3.4
+IP: 192.168.3.1 is trying to contact 192.168.3.5
+IP: 192.168.3.1 is trying to contact 192.168.2.3
+</code></pre>
+
+<p>Will be broken down into segments and will be replaced (for example) with:</p>
+
+<pre><code>IP: 143.214.34.98 is trying to contact 143.214.34.132
+IP: 143.214.34.98 is trying to contact 143.214.34.15
+IP: 143.214.34.98 is trying to contact 143.214.13.132
+</code></pre>
+
+<p>The new file will be stored into the folder 'blacked' and will be assigned a random 6 chars name. In addition to the "encrypted" file there will also be a dictionary file in the same folder. This dictionary file is the "key" to the encrypted file. Do not transfer it to a side you do not trust. It will render the process useless and the original data open.</p>
+
+<p>Please notice that this program depends on 'pyinotify' and is only a Linux library.</p>
+
+<h2>
+<a name="gplv3" class="anchor" href="#gplv3"><span class="octicon octicon-link"></span></a>GPLv3</h2>
+
+<p>Anrin - A Log file Censor Tool
+Copyright (C) 2014 Yuval tisf Nativ</p>
+
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License
+along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/ytisf">ytisf</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-53267734-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
